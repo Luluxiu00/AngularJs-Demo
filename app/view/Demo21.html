@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+  <div ng-app="" ng-init="mySelect=true;a=12">
+    <p>
+    <button ng-disabled="mySelect">点我</button>
+    </p>
+    <p>
+    <input type="checkbox" ng-model="mySelect" />按钮 <br/>
+    </p>
+    <p>
+    {{mySelect}}
+    </p>
+    <p ng-show=true>我是可见的</p>
+    <p ng-show=false>我是不可见的</p>
+    <p ng-show="a > 2">我是可见的</p>
+    <br/>
+    <p ng-hide=true>我是不可见的</p>
+    <p ng-hide=false>我是可见的</p>
+
+  </div>
+</body>
+
+</html>

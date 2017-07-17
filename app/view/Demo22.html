@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+  <div ng-app="app" ng-controller="myCtrl">
+    <button ng-click="count=count+1">点我</button><br/>
+    {{count}}
+  </div>
+  <script type="text/javascript">
+    var app = angular.module("app",[]);
+    app.controller("myCtrl",function($scope){
+      $scope.count = 0;
+    });
+  </script>
+</body>
+
+</html>

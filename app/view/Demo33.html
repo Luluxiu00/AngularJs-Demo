@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+  <p>输入一个数字: <input type="number" ng-model="number"></p>
+  <button ng-click="square()">x<sup>2</sup></button><br/><br/>
+  结果: {{result}}
+  </div>
+
+  <script type="text/javascript">
+      var app = angular.module('myApp',[]);
+      app.value("defaultinput",5);
+      app.config(function($provide){
+        $provide.provider('MathService',function(){
+            this.$get = function(){
+              var factory = {};
+              factory.multiply = function(a,b){
+                return a*b;
+              }
+              return factory;
+            };
+        });
+      });
+
+
+      app.service('CalcService',function(MathService){
+        this.square = function(a){
+          return MathService.multiply(a,a);
+        }
+      });
+
+      app.controller('myCtrl',function($scope,CalcService,defaultinput){
+        $scope.number = defaultinput;
+        $scope.result = CalcService.square($scope.number);
+        $scope.square = function() {
+          $scope.result = CalcService.square($scope.number);
+        }
+      });
+  </script>
+</body>
+
+</html>

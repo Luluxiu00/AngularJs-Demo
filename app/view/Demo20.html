@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <table>
+      <tr ng-repeat="x in names | orderBy : 'Country'">
+        <td>{{$index+1}}</td>
+        <td ng-if="$odd" style="background-color:#11f5f5">{{ x.Name }}</td>
+        <td ng-if="$even">{{x.Name}}</td>
+        <td ng-if="$odd" style="background-color:#11f5f5">{{ x.Country }}</td>
+        <td ng-if="$even">{{x.Country | uppercase}}</td>
+      </tr>
+    </table>
+    <br/><br/>
+    <table>
+      <tr style="{{$odd?'background-color:#11f5f5':''}}" ng-repeat="x in names | orderBy : 'Country'">
+        <td>{{$index+1}}</td>
+        <td>{{x.Name}}</td>
+        <td>{{x.Country | uppercase}}</td>
+      </tr>
+    </table>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope, $http) {
+        $http.get("Customers_JSON.php").then(function(response) {
+          $scope.names = response.data.records;
+        });
+      });
+    </script>
+
+
+</body>
+
+</html>

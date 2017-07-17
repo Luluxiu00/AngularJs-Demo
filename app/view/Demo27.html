@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{x1}}</p>
+    <p>{{x2}}</p>
+  </div>
+  <script type="text/javascript">
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+      $scope.x1 = "JACcc";
+      $scope.x2 = angular.lowercase($scope.x1);
+      $scope.x2 = angular.uppercase($scope.x1);
+      $scope.x2 = angular.isString($scope.x1);
+      $scope.x2 = angular.isNumber($scope.x1);
+    });
+  </script>
+</body>
+
+</html>

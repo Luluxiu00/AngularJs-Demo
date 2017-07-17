@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <select ng-init="name=names[0]" ng-model="name" ng-options="x for x in names">
+    </select>
+    <br/><br/>
+    <select>
+      <option ng-repeat="x in names">{{x}}</option>
+    </select>
+
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+        $scope.names = ["Ali","Baidu","Jingdong"]
+    });
+  </script>
+
+
+</body>
+
+</html>

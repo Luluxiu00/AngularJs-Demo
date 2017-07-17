@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body ng-app="">
+选择一个选项<br/>
+    <form>
+      <input type="radio" ng-model="mySelect" value="a"/>a<br/>
+      <input type="radio" ng-model="mySelect" value="b"/>b<br/>
+      <input type="radio" ng-model="mySelect" value="c"/>c<br/>
+    <form>
+    <br/><br/>
+    <select ng-model="mySelect">
+      <option value=""></option>
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </select>
+  <div ng-switch="mySelect">
+    <div ng-switch-when="a">
+      1111111
+    </div>
+    <div ng-switch-when="b">
+      aaaaaaa
+    </div>
+    <div ng-switch-when="c">
+      !!!!!!!!
+    </div>
+  </div>
+
+</body>
+
+</html>

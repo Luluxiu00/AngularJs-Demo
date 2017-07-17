@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="formCtrl">
+    <form novalidate>
+      First Name: <br/>
+      <input type="text" ng-model="user.firstname"/><br/>
+      Last Name: <br/>
+      <input type="text" ng-model="user.lastname"/><br/>
+    <form>
+    <br/><br/>
+    <button ng-click="reset()">reset</button><br/>
+    Form: {{user}}<br/>
+    Master: {{master}}<br/>
+  </div>
+  <script type="text/javascript">
+    var app = angular.module("myApp",[]);
+    app.controller("formCtrl",function($scope){
+      $scope.master = {firstname:"Jack",lastname:"Brance"};
+      $scope.reset = function(){
+        $scope.user = angular.copy($scope.master);
+      }
+      $scope.reset();
+    });
+  </script>
+</body>
+
+</html>

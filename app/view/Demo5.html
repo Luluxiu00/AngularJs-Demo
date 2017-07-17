@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    姓: <input type="text" ng-model="firstname"><br/>
+    名: <input type="text" ng-model="lastname"><br/>
+    姓名: {{firstname | lowercase}} <br/>
+    姓名: {{fullname() | uppercase}}
+  </div>
+
+  <script src="personController.js"></script>
+</body>
+</html>

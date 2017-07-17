@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h2>我的笔记</h2>
+    <p><textarea ng-model="message" rows="10" cols="40"></textarea></p>
+    <p>
+      <button ng-click="save()">save</button>
+      <button ng-click="clear()">clear</button>
+    </p>
+    <p>剩余字数: <span ng-bind="left()"></span></p>
+  </div>
+
+  <script type="text/javascript">
+      var app = angular.module('myApp',[]);
+      app.controller('myCtrl',function($scope){
+        $scope.message = "";
+        $scope.save = function(){
+          alert("保存成功!");
+        };
+        $scope.clear=function(){
+          $scope.message = "";
+        };
+        $scope.left = function(){
+          return 100 - $scope.message.length;
+        };
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>2秒后显示信息:</p>
+    {{ msg }}
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $timeout) {
+      $scope.msg = "有惊喜!";
+      $timeout(function(){
+        $scope.msg = "才怪...";
+      },2000);
+    });
+  </script>
+
+
+</body>
+
+</html>

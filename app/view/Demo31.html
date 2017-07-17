@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS 学习</title>
+  <style>
+    @keyframes  myChange{
+      from {
+        height: 100px;
+      }to {
+        height: 0;
+      }
+    }
+    div {
+      height:100px;
+      background-color: lightblue;
+    }
+
+    div.ng-hide {
+      animation: 0.5s myChange;
+    }
+  </style>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+</head>
+
+<body ng-app="ngAnimate">
+  <h1>隐藏DIV <input type="checkbox" ng-model="myCheck"></h1>
+  <div ng-hide="myCheck"></div>
+
+</body>
+
+</html>
